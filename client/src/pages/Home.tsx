@@ -1,0 +1,113 @@
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import PortfolioGallery from '@/components/PortfolioGallery';
+import ServicesSection from '@/components/ServicesSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import { Award, Users, Briefcase, FileText, Package, Image, Clipboard, Palette, Printer } from 'lucide-react';
+
+import heroImage1 from '@assets/generated_images/printing_press_in_action_e75a2bcd.png';
+import heroImage2 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
+import heroImage3 from '@assets/generated_images/designer_workspace_c9d97f9d.png';
+import aboutImage from '@assets/generated_images/designer_workspace_c9d97f9d.png';
+import portfolioImg1 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
+import portfolioImg2 from '@assets/generated_images/product_packaging_samples_663bc71a.png';
+import portfolioImg3 from '@assets/generated_images/banners_and_signage_98280056.png';
+import portfolioImg4 from '@assets/generated_images/brochures_and_catalogs_3c7bdcb7.png';
+
+export default function Home() {
+  const heroSlides = [
+    {
+      image: heroImage1,
+      title: 'Qualidade e Tradição desde 1995',
+      subtitle: 'Tecnologia moderna e profissionais especializados para resultados excepcionais'
+    },
+    {
+      image: heroImage2,
+      title: 'Impressão de Alta Qualidade',
+      subtitle: 'Do design à finalização, cuidamos de cada detalhe do seu projeto'
+    },
+    {
+      image: heroImage3,
+      title: 'Criatividade e Inovação',
+      subtitle: 'Soluções gráficas personalizadas para o seu negócio'
+    }
+  ];
+
+  const stats = [
+    { icon: Award, label: 'Anos de Experiência', value: '28+' },
+    { icon: Users, label: 'Clientes Atendidos', value: '500+' },
+    { icon: Briefcase, label: 'Projetos Realizados', value: '2000+' }
+  ];
+
+  const portfolioItems = [
+    { id: 1, image: portfolioImg1, title: 'Cartões de Visita Premium', category: 'Cartões' },
+    { id: 2, image: portfolioImg2, title: 'Embalagens Personalizadas', category: 'Embalagens' },
+    { id: 3, image: portfolioImg3, title: 'Banners Externos', category: 'Sinalização' },
+    { id: 4, image: portfolioImg4, title: 'Catálogos Corporativos', category: 'Catálogos' },
+    { id: 5, image: portfolioImg1, title: 'Material Corporativo', category: 'Cartões' },
+    { id: 6, image: portfolioImg2, title: 'Caixas e Boxes', category: 'Embalagens' },
+  ];
+
+  const services = [
+    {
+      icon: FileText,
+      title: 'Impressão Offset',
+      description: 'Alta qualidade para grandes tiragens de materiais gráficos, garantindo cores precisas e acabamento profissional.'
+    },
+    {
+      icon: Package,
+      title: 'Embalagens',
+      description: 'Desenvolvimento e impressão de embalagens personalizadas que valorizam seu produto.'
+    },
+    {
+      icon: Image,
+      title: 'Impressão Digital',
+      description: 'Soluções rápidas para pequenas e médias tiragens com excelente qualidade.'
+    },
+    {
+      icon: Clipboard,
+      title: 'Material Corporativo',
+      description: 'Cartões de visita, papelaria, pastas e todo material necessário para sua empresa.'
+    },
+    {
+      icon: Palette,
+      title: 'Design Gráfico',
+      description: 'Equipe criativa especializada em desenvolver layouts profissionais e impactantes.'
+    },
+    {
+      icon: Printer,
+      title: 'Grande Formato',
+      description: 'Banners, faixas, adesivos e sinalização para divulgar sua marca.'
+    }
+  ];
+
+  const contactInfo = {
+    address: 'Rua Christovam Molinari, 50, Morro da Glória - CEP: 36035-125, Juiz de Fora - MG',
+    phone: '(32) 3257-8000',
+    email: 'contato@graficaamerica.com.br',
+    hours: 'Segunda a Sexta: 8h às 18h'
+  };
+
+  return (
+    <div className="min-h-screen">
+      <Navbar companyName="Gráfica América" />
+      <HeroSection slides={heroSlides} />
+      <AboutSection
+        title="A Gráfica América"
+        description="Atuando no mercado gráfico desde 1995, a América aposta na criatividade e na ousadia de seus profissionais, além da utilização de modernas tecnologias para propiciar aos seus clientes um excelente padrão de qualidade. Com permanente investimento em especialização, aperfeiçoamento da mão de obra e recursos tecnológicos."
+        image={aboutImage}
+        stats={stats}
+      />
+      <PortfolioGallery items={portfolioItems} />
+      <ServicesSection
+        title="Nossos Serviços"
+        subtitle="A criatividade, imaginação e sensibilidade do designer gráfico e a experiência e conhecimento do impressor são os requisitos necessários para um impresso de sucesso."
+        services={services}
+      />
+      <ContactSection contactInfo={contactInfo} />
+      <Footer companyName="Gráfica América" />
+    </div>
+  );
+}
