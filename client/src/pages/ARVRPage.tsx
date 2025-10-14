@@ -146,11 +146,11 @@ export default function ARVRPage() {
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="text-center p-6 rounded-md bg-background hover-elevate active-elevate-2"
+                className="text-center p-6 rounded-md bg-background border border-primary/20 hover-elevate active-elevate-2"
                 data-testid={`benefit-${index}`}
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-md bg-ring/10 flex items-center justify-center">
-                  <benefit.icon className="w-8 h-8 text-ring" />
+                <div className="w-16 h-16 mx-auto mb-4 rounded-md bg-primary/10 flex items-center justify-center">
+                  <benefit.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {benefit.title}

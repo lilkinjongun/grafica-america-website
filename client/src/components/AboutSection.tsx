@@ -23,8 +23,8 @@ export default function AboutSection({ title, description, image, stats }: About
             
             <div className="grid grid-cols-3 gap-4">
               {stats.map((stat, index) => (
-                <Card key={index} className="p-6 text-center hover-elevate" data-testid={`stat-card-${index}`}>
-                  <stat.icon className="w-8 h-8 mx-auto mb-3 text-ring" />
+                <Card key={index} className="p-6 text-center border border-primary/20 hover-elevate" data-testid={`stat-card-${index}`}>
+                  <stat.icon className="w-8 h-8 mx-auto mb-3 text-primary" />
                   <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </Card>
@@ -41,7 +41,7 @@ export default function AboutSection({ title, description, image, stats }: About
                 data-testid="about-image"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-ring text-primary-foreground px-8 py-4 rounded-md shadow-lg">
+            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground px-8 py-4 rounded-md shadow-lg">
               <div className="text-3xl font-bold">1995</div>
               <div className="text-sm">Desde</div>
             </div>

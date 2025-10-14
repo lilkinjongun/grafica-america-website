@@ -30,12 +30,12 @@ export default function ServicesSection({ title, subtitle, services }: ServicesS
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="hover-elevate active-elevate-2 transition-all" 
+              className="border border-primary/20 hover-elevate active-elevate-2 transition-all" 
               data-testid={`service-card-${index}`}
             >
               <CardContent className="p-8">
-                <div className="w-14 h-14 rounded-md bg-ring/10 flex items-center justify-center mb-6">
-                  <service.icon className="w-7 h-7 text-ring" />
+                <div className="w-14 h-14 rounded-md bg-primary/10 flex items-center justify-center mb-6">
+                  <service.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {service.title}

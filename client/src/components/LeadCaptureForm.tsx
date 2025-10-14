@@ -22,10 +22,10 @@ export default function LeadCaptureForm() {
   };
 
   return (
-    <Card className="border-2 border-ring/20" data-testid="lead-form">
-      <CardHeader className="bg-gradient-to-r from-ring/10 to-transparent pb-6">
+    <Card className="border-2 border-primary/30" data-testid="lead-form">
+      <CardHeader className="bg-gradient-to-r from-primary/10 to-transparent pb-6">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-md bg-ring flex items-center justify-center">
+          <div className="w-12 h-12 rounded-md bg-primary flex items-center justify-center shadow-lg">
             <Sparkles className="w-6 h-6 text-primary-foreground" />
           </div>
           <div>

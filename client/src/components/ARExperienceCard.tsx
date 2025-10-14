@@ -31,7 +31,7 @@ export default function ARExperienceCard({
           <Play className="w-16 h-16 text-white" />
         </div>
         <div className="absolute top-4 right-4">
-          <span className="bg-ring text-primary-foreground px-3 py-1 rounded-md text-sm font-medium">
+          <span className="bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium shadow-lg">
             {category}
           </span>
         </div>
@@ -46,7 +46,7 @@ export default function ARExperienceCard({
         <div className="space-y-2 mb-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-ring mt-2 flex-shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
               <span className="text-sm text-muted-foreground">{feature}</span>
             </div>
           ))}

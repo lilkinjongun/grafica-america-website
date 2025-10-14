@@ -88,11 +88,11 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
           </div>
 
           <div className="lg:col-span-2 space-y-6">
-            <Card className="hover-elevate">
+            <Card className="border border-primary/20 hover-elevate">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-md bg-ring/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-ring" />
+                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Endereço</h3>
@@ -102,15 +102,15 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
               </CardContent>
             </Card>
 
-            <Card className="hover-elevate">
+            <Card className="border border-primary/20 hover-elevate">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-md bg-ring/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-ring" />
+                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Telefone</h3>
-                    <a href={`tel:${contactInfo.phone}`} className="text-muted-foreground text-sm hover:text-ring">
+                    <a href={`tel:${contactInfo.phone}`} className="text-muted-foreground text-sm hover:text-primary">
                       {contactInfo.phone}
                     </a>
                   </div>
@@ -118,15 +118,15 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
               </CardContent>
             </Card>
 
-            <Card className="hover-elevate">
+            <Card className="border border-primary/20 hover-elevate">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-md bg-ring/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-ring" />
+                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">E-mail</h3>
-                    <a href={`mailto:${contactInfo.email}`} className="text-muted-foreground text-sm hover:text-ring">
+                    <a href={`mailto:${contactInfo.email}`} className="text-muted-foreground text-sm hover:text-primary">
                       {contactInfo.email}
                     </a>
                   </div>
@@ -134,11 +134,11 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
               </CardContent>
             </Card>
 
-            <Card className="hover-elevate">
+            <Card className="border border-primary/20 hover-elevate">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-md bg-ring/10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-ring" />
+                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Horário</h3>

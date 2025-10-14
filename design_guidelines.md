@@ -12,17 +12,18 @@
 ## Color Palette
 
 **Primary Brand Colors:**
-- Deep Navy: 220 25% 15% (professionalism, trust, authority)
-- Vibrant Cyan: 195 85% 45% (modern, creative, standout accent)
+- Vibrant Red: 0 84% 50% (brand color, energy, impact, CTAs)
+- Deep Charcoal: 220 15% 20% (professionalism, trust, authority)
 
 **Supporting Colors:**
 - Warm Gray: 30 8% 92% (backgrounds, subtle sections)
 - Cool Gray: 220 10% 50% (secondary text, borders)
 - Pure White: 0 0% 100% (primary backgrounds)
-- Rich Charcoal: 220 15% 20% (headings, emphasis)
+- Rich Black: 220 18% 12% (dark mode background)
 
-**Accent (Use Sparingly):**
-- Electric Blue: 205 90% 55% (CTAs, highlights)
+**Accent (Use Strategically):**
+- Bright Red: 0 90% 60% (hover states, highlights)
+- Dark Red: 0 70% 40% (pressed states, secondary CTAs)
 
 ## Typography
 
