@@ -6,6 +6,10 @@ interface Slide {
   image: string;
   title: string;
   subtitle: string;
+  customButton?: {
+    text: string;
+    href: string;
+  };
 }
 
 interface HeroSectionProps {
@@ -70,14 +74,26 @@ export default function HeroSection({ slides }: HeroSectionProps) {
               >
                 Solicitar Orçamento
               </Button>
-              <Button
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 shadow-lg"
-                data-testid="button-portfolio"
-                onClick={() => console.log('Portfolio clicked')}
-              >
-                Ver Portfólio
-              </Button>
+              {slides[currentSlide].customButton ? (
+                <a href={slides[currentSlide].customButton!.href}>
+                  <Button
+                    size="lg"
+                    className="bg-white text-primary hover:bg-white/90 shadow-lg"
+                    data-testid="button-custom"
+                  >
+                    {slides[currentSlide].customButton!.text}
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 shadow-lg"
+                  data-testid="button-portfolio"
+                  onClick={() => console.log('Portfolio clicked')}
+                >
+                  Ver Portfólio
+                </Button>
+              )}
             </div>
           </div>
         </div>

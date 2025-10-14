@@ -13,7 +13,11 @@ Website moderno e responsivo para a Gráfica América, empresa estabelecida desd
 ## Páginas Principais
 
 ### 1. Home (/)
-- Hero Section com slider de imagens
+- Hero Section com slider de imagens (4 slides incluindo AR/VR)
+  - Slide 1: Qualidade e Tradição desde 1995
+  - Slide 2: Realidade Aumentada e Virtual (com botão para página AR/VR)
+  - Slide 3: Impressão de Alta Qualidade
+  - Slide 4: Criatividade e Inovação
 - Seção Sobre com estatísticas (28+ anos, 500+ clientes, 2000+ projetos)
 - Galeria de Portfólio com filtros
 - Seção de Serviços (6 serviços principais)
@@ -121,6 +125,7 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 - ✅ Botões do Hero atualizados com tema vermelho principal
 - ✅ Navegação mobile com smooth scroll implementado
 - ✅ Todos os ícones e destaques em vermelho (hsl(0, 84%, 50%))
+- ✅ Slide dedicado a AR/VR adicionado ao Hero da página inicial com botão "Conhecer AR/VR"
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários

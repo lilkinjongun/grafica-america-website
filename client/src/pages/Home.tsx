@@ -10,6 +10,7 @@ import { Award, Users, Briefcase, FileText, Package, Image, Clipboard, Palette, 
 import heroImage1 from '@assets/generated_images/printing_press_in_action_e75a2bcd.png';
 import heroImage2 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
 import heroImage3 from '@assets/generated_images/designer_workspace_c9d97f9d.png';
+import heroImageAR from '@assets/stock_images/augmented_reality_te_97825157.jpg';
 import aboutImage from '@assets/generated_images/designer_workspace_c9d97f9d.png';
 import portfolioImg1 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
 import portfolioImg2 from '@assets/generated_images/product_packaging_samples_663bc71a.png';
@@ -22,6 +23,15 @@ export default function Home() {
       image: heroImage1,
       title: 'Qualidade e Tradição desde 1995',
       subtitle: 'Tecnologia moderna e profissionais especializados para resultados excepcionais'
+    },
+    {
+      image: heroImageAR,
+      title: 'Realidade Aumentada e Virtual',
+      subtitle: 'Transforme seus impressos em experiências interativas que surpreendem e engajam',
+      customButton: {
+        text: 'Conhecer AR/VR',
+        href: '/ar-vr'
+      }
     },
     {
       image: heroImage2,
