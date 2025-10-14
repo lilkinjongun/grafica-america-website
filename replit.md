@@ -26,13 +26,52 @@ Website moderno e responsivo para a Gráfica América, empresa estabelecida desd
 
 ### 2. AR/VR (/ar-vr)
 Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a materiais impressos:
-- 4 tipos de experiências destacadas:
-  - Imóveis em Realidade Aumentada (Real Estate)
-  - Cartões de Visita Interativos
-  - Catálogos de Produtos 3D
-  - Mapas Turísticos Aumentados
-- Formulário de captação de leads específico para AR/VR
+- 4 tipos de experiências destacadas na página principal
+- Botão "Explorar Biblioteca Completa" que leva à biblioteca de experiências
+- Formulário de orçamento (anteriormente "Solicitar Demonstração", agora "Solicitar Orçamento")
 - Seção de benefícios da tecnologia
+
+### 3. Biblioteca de Experiências AR (/ar-vr/biblioteca)
+Página com catálogo completo de experiências de AR disponíveis:
+- Grid responsivo de experiências
+- Filtros por categoria (Produtos Impressos, Gastronomia, Packaging, Marketing, Real Estate)
+- Filtros por nível de complexidade (Básico, Intermediário, Avançado)
+- Cards clicáveis que levam às páginas individuais de cada experiência
+
+### 4. Páginas Individuais de Experiências AR
+Cada experiência tem sua própria página dedicada com estrutura completa:
+
+#### a) AR para Produtos Impressos: Vídeo & 3D (/ar-vr/video-3d)
+- Transformação de imagens estáticas em trailers com AR
+- World tracking technology
+- Modelos 3D interativos e vídeos
+
+#### b) Menu de Restaurante em AR (/ar-vr/menu-restaurante)
+- Cardápios aumentados com pratos em 3D
+- Sistema de Lazy Loading
+- Personalização de marca
+
+#### c) Jogo da Memória para Embalagens (/ar-vr/jogo-memoria)
+- Jogo interativo de memória com AR
+- Aplicação em packaging
+- Gamificação de produtos
+
+#### d) Cartões de Visita com AR (/ar-vr/cartao-visita)
+- Cartões que ganham vida com vídeos e 3D
+- Links para redes sociais
+- Experiência de networking diferenciada
+
+#### e) Imóveis em Realidade Aumentada (/ar-vr/imoveis)
+- Tours virtuais 3D de propriedades
+- Visualização de plantas baixas em AR
+- Virtual staging e diferentes acabamentos
+
+**Estrutura de cada página de experiência:**
+- Hero section com título e descrição
+- Experience Overview com detalhes técnicos
+- Seção "Visualize esta Experiência" com QR code e marker
+- Lista de features/benefícios
+- Formulário "Solicitar Orçamento" ao final
 
 ## Design e Cores
 
@@ -67,9 +106,16 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 - Botão para demonstração
 
 ### LeadCaptureForm
-- Formulário específico para AR/VR
+- Formulário de orçamento para AR/VR
+- Título: "Solicite um Orçamento" (atualizado de "Solicite uma Demonstração")
 - Campos: Nome, Email, Empresa, Telefone, Tipo de Experiência, Mensagem
 - Validação e styling moderno
+
+### ExperienceDetailPage
+- Componente reutilizável para páginas de experiências
+- Suporta diferentes níveis (basic, medium, advanced)
+- Seções: Hero, Description, Overview, Features, QR Code/Marker, Lead Form
+- Totalmente responsivo e integrado com o sistema de cores da marca
 
 ## Dados da Empresa
 - **Nome**: Gráfica América
@@ -119,12 +165,16 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 ✅ Testado end-to-end com sucesso
 
 ## Mudanças Recentes (Outubro 2025)
+
+### Design e Branding
 - ✅ Logo integrado no Navbar (branco no hero, colorido ao scrollar) e Footer (branco)
 - ✅ Branding vermelho intensificado em todos os componentes
 - ✅ Badges AR/VR agora com fundo vermelho vibrante
 - ✅ Botões do Hero atualizados com tema vermelho principal
 - ✅ Navegação mobile com smooth scroll implementado
 - ✅ Todos os ícones e destaques em vermelho (hsl(0, 84%, 50%))
+
+### Funcionalidades Home
 - ✅ Slide dedicado a AR/VR adicionado ao Hero da página inicial com botão "Conhecer AR/VR"
 - ✅ **Mapa do Google Maps integrado** na seção de contato mostrando localização exata (R. Cristovam Molinari, 50 - Morro da Glória)
 - ✅ **Seção de contatos expandida** com informações detalhadas por departamento:
@@ -137,6 +187,26 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
   - Atualizados: Links do Facebook e Instagram com URLs oficiais
 - ✅ **Reorganização da seção de contatos**: Cards de departamentos movidos para logo após o cabeçalho, melhorando a hierarquia visual e facilitando o acesso rápido aos contatos por departamento
 - ✅ **Correção de overflow de texto**: Implementado `break-words` e `break-all` nos cards de departamentos para garantir que emails e telefones longos quebrem corretamente sem ultrapassar os limites dos cards em qualquer tamanho de tela
+
+### Expansão AR/VR (14/10/2025)
+- ✅ **Mudança de nomenclatura**: Todos os formulários agora usam "Solicitar Orçamento" ao invés de "Solicitar Demonstração"
+- ✅ **Biblioteca de Experiências AR** (`/ar-vr/biblioteca`):
+  - Grid responsivo com cards de experiências
+  - Filtros por categoria e nível de complexidade
+  - Navegação integrada para páginas individuais
+- ✅ **5 Páginas de Experiências AR Detalhadas**:
+  - AR para Produtos Impressos: Vídeo & 3D (`/ar-vr/video-3d`)
+  - Menu de Restaurante em AR (`/ar-vr/menu-restaurante`)
+  - Jogo da Memória para Embalagens (`/ar-vr/jogo-memoria`)
+  - Cartões de Visita com AR (`/ar-vr/cartao-visita`)
+  - Imóveis em Realidade Aumentada (`/ar-vr/imoveis`)
+- ✅ **Componente Reutilizável ExperienceDetailPage**:
+  - Estrutura completa: Hero, Description, Overview, Features, QR Code, Lead Form
+  - Suporte a diferentes níveis (basic, medium, advanced)
+  - Integração com formulário de orçamento
+- ✅ **Navegação Aprimorada**: Botão "Explorar Biblioteca Completa" na página AR/VR principal
+- ✅ **Todas as rotas configuradas** no App.tsx
+- ✅ **Testes E2E realizados com sucesso**: Navegação, filtros, formulários e visualização de experiências
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários
