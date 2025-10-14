@@ -19,6 +19,18 @@ export default function Navbar({ companyName }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const id = href.substring(2);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setIsMobileMenuOpen(false);
+      }
+    }
+  };
+
   const navItems = [
     { label: 'Início', href: '/' },
     { label: 'Sobre', href: '/#sobre' },
@@ -50,6 +62,7 @@ export default function Navbar({ companyName }: NavbarProps) {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={`font-medium transition-colors hover:text-primary ${
                   isScrolled ? 'text-foreground' : 'text-white'
                 }`}
@@ -58,7 +71,7 @@ export default function Navbar({ companyName }: NavbarProps) {
                 {item.label}
               </a>
             ))}
-            <a href="/#contato">
+            <a href="/#contato" onClick={(e) => handleNavClick(e, '/#contato')}>
               <Button
                 variant={isScrolled ? 'default' : 'default'}
                 className={!isScrolled ? 'bg-white text-primary hover:bg-white/90' : ''}
@@ -86,14 +99,14 @@ export default function Navbar({ companyName }: NavbarProps) {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="block py-2 text-foreground hover:text-primary"
-                onClick={() => setIsMobileMenuOpen(false)}
                 data-testid={`mobile-link-${item.label.toLowerCase()}`}
               >
                 {item.label}
               </a>
             ))}
-            <a href="/#contato" className="block">
+            <a href="/#contato" onClick={(e) => handleNavClick(e, '/#contato')} className="block">
               <Button className="w-full" data-testid="mobile-button-cta">
                 Solicitar Orçamento
               </Button>
