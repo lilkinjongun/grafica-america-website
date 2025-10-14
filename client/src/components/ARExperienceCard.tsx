@@ -31,7 +31,7 @@ export default function ARExperienceCard({
           <Play className="w-16 h-16 text-white" />
         </div>
         <div className="absolute top-4 right-4">
-          <span className="bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium shadow-lg">
+          <span className="bg-primary border-2 border-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium shadow-lg" data-testid={`badge-${category.toLowerCase().replace(/\s/g, '-')}`}>
             {category}
           </span>
         </div>
