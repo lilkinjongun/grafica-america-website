@@ -16,7 +16,7 @@ export default function Footer({ companyName }: FooterProps) {
             <img 
               src={logoImage} 
               alt={companyName}
-              className="h-16 w-auto mb-4 brightness-0 invert"
+              className="h-20 md:h-24 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-primary-foreground/80 text-sm">
               Tradição e qualidade em serviços gráficos desde 1995. 

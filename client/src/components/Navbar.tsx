@@ -53,7 +53,7 @@ export default function Navbar({ companyName }: NavbarProps) {
             <img 
               src={logoImage} 
               alt={companyName}
-              className={`h-12 md:h-14 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
+              className={`h-16 md:h-20 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
             />
           </a>
 
