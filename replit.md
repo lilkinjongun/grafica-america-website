@@ -135,6 +135,7 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
   - Removido: LinkedIn
   - Adicionado: WhatsApp (link direto para contato)
   - Atualizados: Links do Facebook e Instagram com URLs oficiais
+- ✅ **Reorganização da seção de contatos**: Cards de departamentos movidos para logo após o cabeçalho, melhorando a hierarquia visual e facilitando o acesso rápido aos contatos por departamento
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários
