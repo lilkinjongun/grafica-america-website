@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 import logoImage from '@assets/Sem Título-1_1760450880157.png';
 
 interface FooterProps {
@@ -38,7 +38,9 @@ export default function Footer({ companyName }: FooterProps) {
             <h4 className="font-semibold mb-4">Redes Sociais</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/graficaamerica.com.br/?ref=br_rs"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-md bg-primary-foreground/10 flex items-center justify-center hover-elevate active-elevate-2"
                 aria-label="Facebook"
                 data-testid="link-facebook"
@@ -46,7 +48,9 @@ export default function Footer({ companyName }: FooterProps) {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/graficaamericajf/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-md bg-primary-foreground/10 flex items-center justify-center hover-elevate active-elevate-2"
                 aria-label="Instagram"
                 data-testid="link-instagram"
@@ -54,12 +58,14 @@ export default function Footer({ companyName }: FooterProps) {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://api.whatsapp.com/message/SBFBECBEWADWJ1?autoload=1&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-md bg-primary-foreground/10 flex items-center justify-center hover-elevate active-elevate-2"
-                aria-label="LinkedIn"
-                data-testid="link-linkedin"
+                aria-label="WhatsApp"
+                data-testid="link-whatsapp"
               >
-                <Linkedin className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
