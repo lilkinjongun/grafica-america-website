@@ -95,6 +95,43 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
           </p>
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {departments.map((dept, index) => (
+            <Card key={index} className="border border-primary/20">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg">{dept.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {dept.contacts.map((contact, contactIndex) => (
+                  <div key={contactIndex} className="pb-4 border-b border-border last:border-0 last:pb-0">
+                    <p className="font-semibold text-foreground mb-2">{contact.name}</p>
+                    <div className="space-y-1">
+                      <a
+                        href={contact.whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        data-testid={`link-whatsapp-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        {contact.whatsapp}
+                      </a>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        data-testid={`link-email-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
+                      >
+                        <Mail className="w-4 h-4" />
+                        {contact.email}
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div>
             <Card>
@@ -222,43 +259,6 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
               </div>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {departments.map((dept, index) => (
-            <Card key={index} className="border border-primary/20">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg">{dept.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {dept.contacts.map((contact, contactIndex) => (
-                  <div key={contactIndex} className="pb-4 border-b border-border last:border-0 last:pb-0">
-                    <p className="font-semibold text-foreground mb-2">{contact.name}</p>
-                    <div className="space-y-1">
-                      <a
-                        href={contact.whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        data-testid={`link-whatsapp-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        {contact.whatsapp}
-                      </a>
-                      <a
-                        href={`mailto:${contact.email}`}
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        data-testid={`link-email-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
-                      >
-                        <Mail className="w-4 h-4" />
-                        {contact.email}
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </div>
     </section>
