@@ -136,6 +136,7 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
   - Adicionado: WhatsApp (link direto para contato)
   - Atualizados: Links do Facebook e Instagram com URLs oficiais
 - ✅ **Reorganização da seção de contatos**: Cards de departamentos movidos para logo após o cabeçalho, melhorando a hierarquia visual e facilitando o acesso rápido aos contatos por departamento
+- ✅ **Correção de overflow de texto**: Implementado `break-words` e `break-all` nos cards de departamentos para garantir que emails e telefones longos quebrem corretamente sem ultrapassar os limites dos cards em qualquer tamanho de tela
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários
