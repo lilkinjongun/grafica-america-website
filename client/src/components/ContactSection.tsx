@@ -110,19 +110,19 @@ export default function ContactSection({ contactInfo }: ContactSectionProps) {
                         href={contact.whatsappLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors break-words"
                         data-testid={`link-whatsapp-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
                       >
-                        <MessageCircle className="w-4 h-4" />
-                        {contact.whatsapp}
+                        <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                        <span className="break-words">{contact.whatsapp}</span>
                       </a>
                       <a
                         href={`mailto:${contact.email}`}
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors break-words"
                         data-testid={`link-email-${contact.name.toLowerCase().replace(/\s/g, '-')}`}
                       >
-                        <Mail className="w-4 h-4" />
-                        {contact.email}
+                        <Mail className="w-4 h-4 flex-shrink-0" />
+                        <span className="break-all">{contact.email}</span>
                       </a>
                     </div>
                   </div>
