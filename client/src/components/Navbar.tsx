@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImage from '@assets/Sem Título-1_1760450880157.png';
 
 interface NavbarProps {
   companyName: string;
@@ -36,10 +37,12 @@ export default function Navbar({ companyName }: NavbarProps) {
     >
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="/" className="text-xl md:text-2xl font-bold">
-            <span className={isScrolled ? 'text-primary' : 'text-white'}>
-              {companyName}
-            </span>
+          <a href="/" className="flex items-center" data-testid="link-home">
+            <img 
+              src={logoImage} 
+              alt={companyName}
+              className={`h-12 md:h-14 w-auto transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -57,8 +60,8 @@ export default function Navbar({ companyName }: NavbarProps) {
             ))}
             <a href="/#contato">
               <Button
-                variant={isScrolled ? 'default' : 'outline'}
-                className={!isScrolled ? 'border-white text-white hover:bg-white/10' : ''}
+                variant={isScrolled ? 'default' : 'default'}
+                className={!isScrolled ? 'bg-white text-primary hover:bg-white/90' : ''}
                 data-testid="button-cta"
               >
                 Solicitar Orçamento

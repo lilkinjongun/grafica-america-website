@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import logoImage from '@assets/Sem Título-1_1760450880157.png';
 
 interface FooterProps {
   companyName: string;
@@ -12,7 +13,11 @@ export default function Footer({ companyName }: FooterProps) {
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">{companyName}</h3>
+            <img 
+              src={logoImage} 
+              alt={companyName}
+              className="h-16 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-primary-foreground/80 text-sm">
               Tradição e qualidade em serviços gráficos desde 1995. 
               Transformando suas ideias em impressões perfeitas.

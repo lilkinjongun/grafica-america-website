@@ -64,7 +64,7 @@ export default function HeroSection({ slides }: HeroSectionProps) {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90 shadow-lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
                 data-testid="button-contact"
                 onClick={() => console.log('Contact clicked')}
               >
@@ -72,8 +72,7 @@ export default function HeroSection({ slides }: HeroSectionProps) {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                className="bg-white text-primary hover:bg-white/90 shadow-lg"
                 data-testid="button-portfolio"
                 onClick={() => console.log('Portfolio clicked')}
               >

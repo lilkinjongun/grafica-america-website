@@ -98,10 +98,16 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 - `npm run dev` - Inicia servidor de desenvolvimento
 - Build automático via Vite
 
+## Assets
+- **Logo Principal**: `Sem Título-1_1760450880157.png` - Logo completo com texto "América INDÚSTRIA GRÁFICA"
+- **Logo Ícone**: `d507fa_6d174c7163334165bebbe83e3aa2fbab~mv2_1760450511060.png` - Símbolo circular
+- Logos implementados no Navbar e Footer com filtros para adaptação de cor
+
 ## Status
 ✅ Website completo e funcional
 ✅ Página AR/VR implementada
 ✅ Design atualizado com vermelho como cor principal
+✅ Logos oficiais da Gráfica América integrados
 ✅ Totalmente responsivo
 ✅ Imagens geradas via stock photos
 
