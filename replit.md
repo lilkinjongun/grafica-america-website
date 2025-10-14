@@ -126,10 +126,18 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 - ✅ Navegação mobile com smooth scroll implementado
 - ✅ Todos os ícones e destaques em vermelho (hsl(0, 84%, 50%))
 - ✅ Slide dedicado a AR/VR adicionado ao Hero da página inicial com botão "Conhecer AR/VR"
+- ✅ **Mapa do Google Maps integrado** na seção de contato mostrando localização exata (R. Cristovam Molinari, 50 - Morro da Glória)
+- ✅ **Seção de contatos expandida** com informações detalhadas por departamento:
+  - Vendas: Marcelo Nepomuceno, Vivian, Mariana
+  - Financeiro/Faturamento: Jéssica, Anna
+  - Atendimento ao Cliente: Lanuza
+- ✅ **Redes sociais atualizadas no Footer**:
+  - Removido: LinkedIn
+  - Adicionado: WhatsApp (link direto para contato)
+  - Atualizados: Links do Facebook e Instagram com URLs oficiais
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários
 - Galeria de portfólio com mais imagens reais
 - Sistema de filtros funcionais no portfólio
-- Integração com Google Maps na seção de contato
 - Animações e transições mais elaboradas
