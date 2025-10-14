@@ -29,9 +29,9 @@ export default function LeadCaptureForm() {
             <Sparkles className="w-6 h-6 text-primary-foreground" />
           </div>
           <div>
-            <CardTitle className="text-2xl">Solicite uma Demonstração</CardTitle>
+            <CardTitle className="text-2xl">Solicite um Orçamento</CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
-              Descubra como AR/VR pode revolucionar seus impressos
+              Preencha o formulário e receba um orçamento personalizado
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function LeadCaptureForm() {
             data-testid="input-lead-message"
           />
           <Button type="submit" size="lg" className="w-full" data-testid="button-lead-submit">
-            Solicitar Demonstração
+            Solicitar Orçamento
           </Button>
           <p className="text-xs text-muted-foreground text-center">
             Ao enviar, você concorda em receber comunicações da Gráfica América
