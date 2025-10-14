@@ -1,8 +1,10 @@
+import { Link } from 'wouter';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ARExperienceCard from '@/components/ARExperienceCard';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
-import { Smartphone, Eye, Layers, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Smartphone, Eye, Layers, Sparkles, Library } from 'lucide-react';
 
 import heroImage from '@assets/stock_images/augmented_reality_te_97825157.jpg';
 import realEstateImage from '@assets/stock_images/real_estate_augmente_5ba68dbf.jpg';
@@ -23,7 +25,7 @@ export default function ARVRPage() {
         'Informações interativas sobre cada ambiente',
         'Galeria de fotos 360° integrada'
       ],
-      demoUrl: '#demo-real-estate'
+      demoUrl: '/ar-vr/imoveis'
     },
     {
       title: 'Cartões de Visita Interativos',
@@ -36,33 +38,33 @@ export default function ARVRPage() {
         'Portfólio de trabalhos em 3D',
         'Formulário de contato integrado'
       ],
-      demoUrl: '#demo-business-card'
+      demoUrl: '/ar-vr/cartao-visita'
     },
     {
-      title: 'Catálogos de Produtos 3D',
-      description: 'Catálogos impressos que revelam produtos em 3D com texturas personalizáveis e informações detalhadas.',
+      title: 'AR para Produtos Impressos: Vídeo & 3D',
+      description: 'Transforme imagens estáticas em experiências multimídia com trailers, vídeos e objetos 3D interativos.',
       image: catalogImage,
-      category: 'E-commerce',
+      category: 'Produtos Impressos',
       features: [
-        'Visualização 3D de produtos ao escanear',
-        'Troca de cores e texturas em tempo real',
-        'Fichas técnicas e vídeos demonstrativos',
-        'Botão "Comprar Agora" integrado'
+        'Rastreamento mundial (World Tracking)',
+        'Vídeos em alta definição sobrepostos',
+        'Modelos 3D interativos com animações',
+        'Cartões de informação com Call-to-Action'
       ],
-      demoUrl: '#demo-catalog'
+      demoUrl: '/ar-vr/video-3d'
     },
     {
-      title: 'Mapas Turísticos Aumentados',
-      description: 'Mapas que ganham vida com informações interativas, vídeos de pontos turísticos e rotas personalizadas.',
+      title: 'Menu de Restaurante em AR',
+      description: 'Cardápios aumentados que trazem pratos à vida com visualização 3D e lazy loading.',
       image: tourismImage,
-      category: 'Turismo',
+      category: 'Gastronomia',
       features: [
-        'Pontos de interesse com vídeos e fotos',
-        'Informações históricas e culturais',
-        'Rotas sugeridas e navegação AR',
-        'Promoções de estabelecimentos locais'
+        'Visualização 3D realista de pratos',
+        'Sistema de Lazy Loading para menus extensos',
+        'Personalização total de cores e marca',
+        'Compatível com qualquer cardápio impresso'
       ],
-      demoUrl: '#demo-tourism'
+      demoUrl: '/ar-vr/menu-restaurante'
     }
   ];
 
@@ -120,7 +122,7 @@ export default function ARVRPage() {
               </a>
               <a href="#lead-form">
                 <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-md bg-white/10 backdrop-blur-sm hover-elevate active-elevate-2">
-                  Solicitar Demonstração
+                  Solicitar Orçamento
                 </button>
               </a>
             </div>
@@ -180,6 +182,19 @@ export default function ARVRPage() {
             {experiences.map((experience, index) => (
               <ARExperienceCard key={index} {...experience} />
             ))}
+          </div>
+
+          {/* Library CTA */}
+          <div className="mt-12 text-center">
+            <p className="text-lg text-muted-foreground mb-4">
+              Quer ver mais experiências de AR?
+            </p>
+            <Link href="/ar-vr/biblioteca">
+              <Button size="lg" variant="outline" data-testid="button-library">
+                <Library className="w-5 h-5 mr-2" />
+                Explorar Biblioteca Completa
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
