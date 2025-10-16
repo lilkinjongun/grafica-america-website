@@ -210,6 +210,27 @@ Cada experiência tem sua própria página dedicada com estrutura completa:
 
 ## Próximas Melhorias Sugeridas
 - Integração com backend real para formulários
-- Galeria de portfólio com mais imagens reais
 - Sistema de filtros funcionais no portfólio
 - Animações e transições mais elaboradas
+
+## SEO para Imobiliárias/Construtoras (Implementado - 16/10/2025)
+- ✅ **Meta tags otimizadas** para JF, RJ e SP
+- ✅ **Schema.org completo**: LocalBusiness, Service, BreadcrumbList, Geo-tags
+- ✅ **Open Graph** para WhatsApp, Facebook, LinkedIn
+- ✅ **Keywords focadas**: realidade aumentada imóveis, tour virtual 3D, AR imobiliária, plantas baixas AR
+- ✅ **Páginas otimizadas**:
+  - Home: "Gráfica América | AR para Imóveis e Construtoras - JF, RJ e SP"
+  - AR/VR: "Realidade Aumentada para Imóveis | Tour Virtual 3D"
+  - Imóveis AR: "Tour Virtual AR para Imobiliárias | Juiz de Fora, RJ e SP"
+
+## Imagens Reais da Estrutura (16/10/2025)
+- ✅ 9 fotos profissionais da Gráfica América:
+  - Fachada externa (prédio vermelho/cinza)
+  - Recepção moderna com troféus
+  - Salas de design e escritório
+  - Escadaria com logo América
+  - Quadro de medalhas e conquistas
+  - Equipamentos: Impressora Offset RYOBI (2 modelos)
+  - Máquina de Corte a Laser
+  - Dobradeira industrial
+- ✅ Imagens AR profissionais: LOTR poster, restaurante 3D, embalagens, cartão visita, imóveis

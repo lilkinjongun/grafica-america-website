@@ -2,9 +2,11 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import PortfolioGallery from '@/components/PortfolioGallery';
+import FacilitiesSection from '@/components/FacilitiesSection';
 import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { Award, Users, Briefcase, FileText, Package, Image, Clipboard, Palette, Printer } from 'lucide-react';
 
 import heroImage1 from '@assets/generated_images/printing_press_in_action_e75a2bcd.png';
@@ -100,8 +102,95 @@ export default function Home() {
     hours: 'Segunda a Sexta: 8h às 18h'
   };
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://graficaamerica.com.br/#business",
+        "name": "Gráfica América",
+        "description": "Gráfica especializada em Realidade Aumentada para Imóveis e Construtoras em Juiz de Fora, Rio de Janeiro e São Paulo. Tours virtuais 3D, plantas baixas AR e marketing imobiliário inovador.",
+        "url": "https://graficaamerica.com.br",
+        "telephone": "+55-32-3257-8000",
+        "email": "contato@graficaamerica.com.br",
+        "foundingDate": "1995",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Christovam Molinari, 50, Morro da Glória",
+          "addressLocality": "Juiz de Fora",
+          "addressRegion": "MG",
+          "postalCode": "36035-125",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-21.7654",
+          "longitude": "-43.3496"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Juiz de Fora"
+          },
+          {
+            "@type": "City",
+            "name": "Rio de Janeiro"
+          },
+          {
+            "@type": "City",
+            "name": "São Paulo"
+          }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://graficaamerica.com.br/#ar-imoveis",
+        "name": "Realidade Aumentada para Imóveis",
+        "description": "Tours virtuais 3D em AR para imobiliárias e construtoras. Transforme plantas baixas e folders imobiliários em experiências interativas.",
+        "provider": {
+          "@id": "https://graficaamerica.com.br/#business"
+        },
+        "areaServed": [
+          "Juiz de Fora",
+          "Rio de Janeiro",
+          "São Paulo"
+        ],
+        "serviceType": "Realidade Aumentada, Tour Virtual 3D, Marketing Imobiliário"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://graficaamerica.com.br"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Gráfica América | AR para Imóveis e Construtoras - Juiz de Fora, RJ e SP"
+        description="Transforme plantas baixas e folders imobiliários em tours virtuais 3D com Realidade Aumentada. Atendemos imobiliárias e construtoras em Juiz de Fora, Rio de Janeiro e São Paulo. Solicite orçamento!"
+        keywords="realidade aumentada imóveis, tour virtual 3D, AR imobiliária, plantas baixas AR, marketing imobiliário, construtora tecnologia, imobiliária Juiz de Fora, tour virtual Rio de Janeiro, AR São Paulo"
+        schema={schema}
+      />
       <Navbar companyName="Gráfica América" />
       <HeroSection slides={heroSlides} />
       <AboutSection
@@ -111,6 +200,7 @@ export default function Home() {
         stats={stats}
       />
       <PortfolioGallery items={portfolioItems} />
+      <FacilitiesSection />
       <ServicesSection
         title="Nossos Serviços"
         subtitle="A criatividade, imaginação e sensibilidade do designer gráfico e a experiência e conhecimento do impressor são os requisitos necessários para um impresso de sucesso."

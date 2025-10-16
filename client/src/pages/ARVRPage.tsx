@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ARExperienceCard from '@/components/ARExperienceCard';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Smartphone, Eye, Layers, Sparkles, Library } from 'lucide-react';
 
@@ -91,8 +92,34 @@ export default function ARVRPage() {
     }
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Realidade Aumentada para Imóveis e Impressos",
+    "description": "Soluções de AR/VR para materiais impressos, tours virtuais imobiliários e experiências interativas. Atendemos imobiliárias e empresas em Juiz de Fora, Rio de Janeiro e São Paulo.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Gráfica América",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Christovam Molinari, 50",
+        "addressLocality": "Juiz de Fora",
+        "addressRegion": "MG",
+        "postalCode": "36035-125"
+      }
+    },
+    "areaServed": ["Juiz de Fora", "Rio de Janeiro", "São Paulo"],
+    "serviceType": "Realidade Aumentada, Tour Virtual 3D, AR para Impressos, Marketing Imobiliário"
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Realidade Aumentada para Imóveis | Tour Virtual 3D | Gráfica América"
+        description="Tours virtuais em AR para imobiliárias e soluções AR para impressos. Transforme folders e plantas baixas em experiências 3D interativas. Atendemos Juiz de Fora, Rio de Janeiro e São Paulo."
+        keywords="realidade aumentada, AR imóveis, tour virtual 3D, AR impressos, marketing imobiliário AR, experiências interativas, imobiliária tecnologia Juiz de Fora, AR Rio de Janeiro, tour 3D São Paulo"
+        schema={schema}
+      />
       <Navbar companyName="Gráfica América" />
       
       {/* Hero Section */}
