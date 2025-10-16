@@ -13,11 +13,13 @@ import heroImage1 from '@assets/generated_images/printing_press_in_action_e75a2b
 import heroImage2 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
 import heroImage3 from '@assets/generated_images/designer_workspace_c9d97f9d.png';
 import heroImageAR from '@assets/stock_images/augmented_reality_te_97825157.jpg';
-import aboutImage from '@assets/generated_images/designer_workspace_c9d97f9d.png';
-import portfolioImg1 from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
-import portfolioImg2 from '@assets/generated_images/product_packaging_samples_663bc71a.png';
-import portfolioImg3 from '@assets/generated_images/banners_and_signage_98280056.png';
-import portfolioImg4 from '@assets/generated_images/brochures_and_catalogs_3c7bdcb7.png';
+import aboutImage from '@assets/image_1760654565115.png';
+import portfolioImg1 from '@assets/image_1760654627708.png';
+import portfolioImg2 from '@assets/image_1760654636833.png';
+import portfolioImg3 from '@assets/image_1760654644636.png';
+import portfolioImg4 from '@assets/image_1760654652532.png';
+import portfolioImg5 from '@assets/image_1760654574841.png';
+import portfolioImg6 from '@assets/image_1760654585304.png';
 
 export default function Home() {
   const heroSlides = [
@@ -54,12 +56,12 @@ export default function Home() {
   ];
 
   const portfolioItems = [
-    { id: 1, image: portfolioImg1, title: 'Cartões de Visita Premium', category: 'Cartões' },
-    { id: 2, image: portfolioImg2, title: 'Embalagens Personalizadas', category: 'Embalagens' },
-    { id: 3, image: portfolioImg3, title: 'Banners Externos', category: 'Sinalização' },
-    { id: 4, image: portfolioImg4, title: 'Catálogos Corporativos', category: 'Catálogos' },
-    { id: 5, image: portfolioImg1, title: 'Material Corporativo', category: 'Cartões' },
-    { id: 6, image: portfolioImg2, title: 'Caixas e Boxes', category: 'Embalagens' },
+    { id: 1, image: portfolioImg1, title: 'Impressora Offset RYOBI', category: 'Equipamentos' },
+    { id: 2, image: portfolioImg2, title: 'Impressão Offset Profissional', category: 'Equipamentos' },
+    { id: 3, image: portfolioImg3, title: 'Corte a Laser de Precisão', category: 'Acabamento' },
+    { id: 4, image: portfolioImg4, title: 'Dobradeira Industrial', category: 'Acabamento' },
+    { id: 5, image: portfolioImg5, title: 'Recepção e Atendimento', category: 'Estrutura' },
+    { id: 6, image: portfolioImg6, title: 'Escritório de Design', category: 'Estrutura' },
   ];
 
   const services = [
