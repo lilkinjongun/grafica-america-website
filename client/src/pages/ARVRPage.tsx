@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'wouter';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -5,15 +6,21 @@ import ARExperienceCard from '@/components/ARExperienceCard';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
-import { Smartphone, Eye, Layers, Sparkles, Library } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Smartphone, Eye, Layers, Sparkles, ArrowRight } from 'lucide-react';
 
 import heroImage from '@assets/stock_images/augmented_reality_te_97825157.jpg';
 import realEstateImage from '@assets/stock_images/real_estate_augmente_5ba68dbf.jpg';
 import businessCardImage from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
 import catalogImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
 import tourismImage from '@assets/stock_images/tourism_map_augmente_2c91bd53.jpg';
+import packagingImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
 
 export default function ARVRPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedLevel, setSelectedLevel] = useState<string>('all');
   const experiences = [
     {
       title: 'Imóveis em Realidade Aumentada',
@@ -68,6 +75,65 @@ export default function ARVRPage() {
       demoUrl: '/ar-vr/menu-restaurante'
     }
   ];
+
+  // Biblioteca completa de experiências
+  const allExperiences = [
+    {
+      id: 'real-estate',
+      title: 'Imóveis em Realidade Aumentada',
+      category: 'Real Estate',
+      level: 'medium',
+      image: realEstateImage,
+      path: '/ar-vr/imoveis'
+    },
+    {
+      id: 'business-card',
+      title: 'Cartões de Visita com AR',
+      category: 'Marketing',
+      level: 'basic',
+      image: businessCardImage,
+      path: '/ar-vr/cartao-visita'
+    },
+    {
+      id: 'video-3d',
+      title: 'AR para Produtos Impressos: Vídeo & 3D',
+      category: 'Produtos Impressos',
+      level: 'medium',
+      image: catalogImage,
+      path: '/ar-vr/video-3d'
+    },
+    {
+      id: 'restaurant-menu',
+      title: 'Menu de Restaurante em AR',
+      category: 'Gastronomia',
+      level: 'medium',
+      image: tourismImage,
+      path: '/ar-vr/menu-restaurante'
+    },
+    {
+      id: 'memory-game',
+      title: 'Jogo da Memória para Embalagens',
+      category: 'Packaging',
+      level: 'advanced',
+      image: packagingImage,
+      path: '/ar-vr/jogo-memoria'
+    }
+  ];
+
+  const levelColors = {
+    basic: 'bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20',
+    medium: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20',
+    advanced: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/20'
+  };
+
+  const categories = ['all', 'Produtos Impressos', 'Gastronomia', 'Packaging', 'Marketing', 'Real Estate'];
+  const levels = ['all', 'basic', 'medium', 'advanced'];
+
+  const filteredExperiences = allExperiences.filter(exp => {
+    const categoryMatch = selectedCategory === 'all' || exp.category === selectedCategory;
+    const levelMatch = selectedLevel === 'all' || exp.level === selectedLevel;
+    return categoryMatch && levelMatch;
+  });
 
   const benefits = [
     {
@@ -210,19 +276,92 @@ export default function ARVRPage() {
               <ARExperienceCard key={index} {...experience} />
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Library CTA */}
-          <div className="mt-12 text-center">
-            <p className="text-lg text-muted-foreground mb-4">
-              Quer ver mais experiências de AR?
+      {/* Complete Library Section */}
+      <section className="py-20 md:py-24 bg-muted/30" data-testid="library-section">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Biblioteca Completa de Experiências
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+              Explore exemplos inspiradores de Web AR com passos, benefícios e casos de uso para tornar seus projetos mais rápidos e fáceis
             </p>
-            <Link href="/ar-vr/biblioteca">
-              <Button size="lg" variant="outline" data-testid="button-library">
-                <Library className="w-5 h-5 mr-2" />
-                Explorar Biblioteca Completa
-              </Button>
-            </Link>
+
+            {/* Filters */}
+            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+              <div className="flex-1">
+                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                  <SelectTrigger data-testid="select-category">
+                    <SelectValue placeholder="Filtrar por categoria" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todas as categorias</SelectItem>
+                    {categories.slice(1).map(cat => (
+                      <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex-1">
+                <Select value={selectedLevel} onValueChange={setSelectedLevel}>
+                  <SelectTrigger data-testid="select-level">
+                    <SelectValue placeholder="Filtrar por nível" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todos os níveis</SelectItem>
+                    <SelectItem value="basic">Básico</SelectItem>
+                    <SelectItem value="medium">Intermediário</SelectItem>
+                    <SelectItem value="advanced">Avançado</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
           </div>
+
+          {/* Library Grid */}
+          {filteredExperiences.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-xl text-muted-foreground">
+                Nenhuma experiência encontrada com os filtros selecionados.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredExperiences.map((experience) => (
+                <Link key={experience.id} href={experience.path}>
+                  <Card className="group cursor-pointer overflow-hidden hover-elevate active-elevate-2 h-full" data-testid={`experience-card-${experience.id}`}>
+                    <div className="aspect-video relative overflow-hidden">
+                      <img 
+                        src={experience.image} 
+                        alt={experience.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 right-3 flex gap-2">
+                        <Badge variant="outline" className={levelColors[experience.level as keyof typeof levelColors]}>
+                          {experience.level}
+                        </Badge>
+                      </div>
+                    </div>
+                    <CardContent className="p-6">
+                      <Badge variant="outline" className="mb-3">
+                        {experience.category}
+                      </Badge>
+                      <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {experience.title}
+                      </h3>
+                      <div className="flex items-center text-primary font-medium">
+                        Ver detalhes
+                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
