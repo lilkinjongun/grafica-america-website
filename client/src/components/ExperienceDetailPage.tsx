@@ -136,73 +136,98 @@ export default function ExperienceDetailPage({
         </div>
       </section>
 
-      {/* Try it Section */}
+      {/* Try it Section - Onirix Style */}
       <section className="py-16 md:py-20 bg-muted/30" data-testid="experience-try">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Visualize esta Experiência
             </h2>
             <p className="text-lg text-muted-foreground">
-              Escaneie o QR code e aponte para o marker para ver em AR
+              Escaneie o QR code com seu celular para experimentar em AR
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* QR Code Card */}
-            <Card className="overflow-hidden">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-md bg-primary/10 flex items-center justify-center">
-                  <QrCode className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Escaneie o QR Code
-                </h3>
-                {qrCodeImage ? (
-                  <div className="bg-white p-4 rounded-md inline-block">
-                    <img 
-                      src={qrCodeImage} 
-                      alt="QR Code" 
-                      className="w-48 h-48 mx-auto"
-                    />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* QR Code - Left Column */}
+            <div className="lg:col-span-1">
+              <Card className="overflow-hidden h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <QrCode className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      Acesse com seu celular
+                    </h3>
                   </div>
-                ) : (
-                  <div className="bg-muted p-8 rounded-md">
-                    <p className="text-muted-foreground">QR Code disponível em breve</p>
-                  </div>
-                )}
-                {demoUrl && (
-                  <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
-                    <Button variant="outline" size="sm">
-                      Ver com 3D Viewer
-                    </Button>
-                  </a>
-                )}
-              </CardContent>
-            </Card>
+                  {qrCodeImage ? (
+                    <div className="bg-white p-4 rounded-md mb-4">
+                      <img 
+                        src={qrCodeImage} 
+                        alt="QR Code" 
+                        className="w-full aspect-square object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="bg-muted p-8 rounded-md mb-4 aspect-square flex items-center justify-center">
+                      <p className="text-muted-foreground text-sm text-center">QR Code disponível em breve</p>
+                    </div>
+                  )}
+                  {demoUrl && (
+                    <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" size="sm" className="w-full">
+                        <Eye className="w-4 h-4 mr-2" />
+                        Ver Demonstração Online
+                      </Button>
+                    </a>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
 
-            {/* Marker Card */}
-            <Card className="overflow-hidden">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Scan className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Marker de Referência
-                </h3>
-                {markerImage ? (
-                  <img 
-                    src={markerImage} 
-                    alt="AR Marker" 
-                    className="w-full max-w-sm mx-auto rounded-md border border-border"
-                  />
-                ) : (
-                  <div className="bg-muted p-8 rounded-md">
-                    <p className="text-muted-foreground">Aponte sua câmera para o material impresso</p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+            {/* Preview - Right Column */}
+            <div className="lg:col-span-2">
+              <Card className="overflow-hidden h-full">
+                <CardContent className="p-0">
+                  {videoUrl ? (
+                    <div className="relative aspect-video bg-black">
+                      <video 
+                        src={videoUrl}
+                        controls
+                        className="w-full h-full"
+                        poster={markerImage}
+                      >
+                        Seu navegador não suporta vídeos.
+                      </video>
+                    </div>
+                  ) : markerImage ? (
+                    <div className="relative aspect-video">
+                      <img 
+                        src={markerImage} 
+                        alt="Preview da Experiência AR" 
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
+                        <div className="p-6 w-full">
+                          <div className="flex items-center gap-2 text-white">
+                            <Scan className="w-5 h-5" />
+                            <p className="text-sm font-medium">Aponte sua câmera para o material impresso</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="aspect-video bg-muted flex items-center justify-center p-8">
+                      <div className="text-center">
+                        <Eye className="w-12 h-12 text-muted-foreground/50 mx-auto mb-3" />
+                        <p className="text-muted-foreground">Preview da experiência disponível em breve</p>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>

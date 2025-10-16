@@ -31,12 +31,13 @@ Página dedicada a experiências de Realidade Aumentada e Virtual aplicadas a ma
 - Formulário de orçamento (anteriormente "Solicitar Demonstração", agora "Solicitar Orçamento")
 - Seção de benefícios da tecnologia
 
-### 3. Biblioteca de Experiências AR (/ar-vr/biblioteca)
-Página com catálogo completo de experiências de AR disponíveis:
+### 3. Biblioteca de Experiências AR (integrada em /ar-vr)
+Biblioteca completa integrada na página AR/VR principal:
 - Grid responsivo de experiências
-- Filtros por categoria (Produtos Impressos, Gastronomia, Packaging, Marketing, Real Estate)
+- Filtros por categoria (Produtos Impressos, Gastronomia, Packaging, Marketing, Real Estate, Cinema & Entretenimento)
 - Filtros por nível de complexidade (Básico, Intermediário, Avançado)
 - Cards clicáveis que levam às páginas individuais de cada experiência
+- Sem rota separada - tudo em uma página única
 
 ### 4. Páginas Individuais de Experiências AR
 Cada experiência tem sua própria página dedicada com estrutura completa:
@@ -66,10 +67,19 @@ Cada experiência tem sua própria página dedicada com estrutura completa:
 - Visualização de plantas baixas em AR
 - Virtual staging e diferentes acabamentos
 
-**Estrutura de cada página de experiência:**
+#### f) Lord of the Rings: Pôster AR (/ar-vr/lotr)
+- Pôsteres de filmes com AR
+- Trailers e making-of interativos
+- Modelos 3D de personagens
+- Conteúdo exclusivo ao escanear
+
+**Estrutura de cada página de experiência (Layout Onirix):**
 - Hero section com título e descrição
 - Experience Overview com detalhes técnicos
-- Seção "Visualize esta Experiência" com QR code e marker
+- Seção "Visualize esta Experiência" com layout Onirix:
+  - QR code à esquerda (1/3)
+  - Preview/vídeo grande à direita (2/3)
+  - Suporte para vídeo demonstrativo
 - Lista de features/benefícios
 - Formulário "Solicitar Orçamento" ao final
 

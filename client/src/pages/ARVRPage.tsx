@@ -17,6 +17,7 @@ import businessCardImage from '@assets/generated_images/business_cards_and_broch
 import catalogImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
 import tourismImage from '@assets/stock_images/tourism_map_augmente_2c91bd53.jpg';
 import packagingImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
+import lotrImage from '@assets/stock_images/lord_of_the_rings_mo_4cbeeeb1.jpg';
 
 export default function ARVRPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -117,6 +118,14 @@ export default function ARVRPage() {
       level: 'advanced',
       image: packagingImage,
       path: '/ar-vr/jogo-memoria'
+    },
+    {
+      id: 'lotr',
+      title: 'Lord of the Rings: Pôster AR',
+      category: 'Cinema & Entretenimento',
+      level: 'advanced',
+      image: lotrImage,
+      path: '/ar-vr/lotr'
     }
   ];
 
@@ -126,7 +135,7 @@ export default function ARVRPage() {
     advanced: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/20'
   };
 
-  const categories = ['all', 'Produtos Impressos', 'Gastronomia', 'Packaging', 'Marketing', 'Real Estate'];
+  const categories = ['all', 'Produtos Impressos', 'Gastronomia', 'Packaging', 'Marketing', 'Real Estate', 'Cinema & Entretenimento'];
   const levels = ['all', 'basic', 'medium', 'advanced'];
 
   const filteredExperiences = allExperiences.filter(exp => {
