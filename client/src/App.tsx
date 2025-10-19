@@ -11,6 +11,8 @@ import MemoryGameExperience from "@/pages/experiences/MemoryGameExperience";
 import BusinessCardExperience from "@/pages/experiences/BusinessCardExperience";
 import RealEstateExperience from "@/pages/experiences/RealEstateExperience";
 import LOTRExperience from "@/pages/experiences/LOTRExperience";
+import MoviePosterExperience from "@/pages/experiences/MoviePosterExperience";
+import BirthdayCardExperience from "@/pages/experiences/BirthdayCardExperience";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +26,8 @@ function Router() {
       <Route path="/ar-vr/cartao-visita" component={BusinessCardExperience} />
       <Route path="/ar-vr/imoveis" component={RealEstateExperience} />
       <Route path="/ar-vr/lotr" component={LOTRExperience} />
+      <Route path="/ar-vr/movie-poster" component={MoviePosterExperience} />
+      <Route path="/ar-vr/birthday-card" component={BirthdayCardExperience} />
       <Route component={NotFound} />
     </Switch>
   );

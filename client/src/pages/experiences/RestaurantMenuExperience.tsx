@@ -5,7 +5,7 @@ import qrCodeImage from '@assets/stock_images/qr_code_black_and_wh_d280473f.jpg'
 export default function RestaurantMenuExperience() {
   return (
     <ExperienceDetailPage
-      title="Menu de Restaurante em AR"
+      title="Restaurant Menu for Web AR"
       subtitle="Cardápios aumentados que trazem pratos à vida com visualização 3D"
       category="Gastronomia"
       level="medium"
@@ -25,6 +25,7 @@ export default function RestaurantMenuExperience() {
         'Tempo de carregamento otimizado independente da quantidade de itens'
       ]}
       qrCodeImage={qrCodeImage}
+      targetImage={heroImage}
       demoUrl="https://player.onirix.com/projects/5abd0c8df43048febf355e2c9c2cf122/webar"
     />
   );

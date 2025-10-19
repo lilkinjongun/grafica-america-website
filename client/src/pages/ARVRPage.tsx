@@ -2,86 +2,28 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ARExperienceCard from '@/components/ARExperienceCard';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import SEO from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Smartphone, Eye, Layers, Sparkles, ArrowRight } from 'lucide-react';
 
 import heroImage from '@assets/stock_images/augmented_reality_te_97825157.jpg';
 import realEstateImage from '@assets/stock_images/real_estate_augmente_5ba68dbf.jpg';
-import businessCardImage from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
-import catalogImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
-import tourismImage from '@assets/stock_images/tourism_map_augmente_2c91bd53.jpg';
-import packagingImage from '@assets/generated_images/product_packaging_samples_663bc71a.png';
-import lotrImage from '@assets/stock_images/lord_of_the_rings_mo_4cbeeeb1.jpg';
+import businessCardImage from '@assets/business_card_target.webp';
+import lotrImage from '@assets/lotr_poster_target.webp';
+import chaplinImage from '@assets/chaplin_poster_target.webp';
+import birthdayImage from '@assets/birthday_card_target.webp';
+import menuImage from '@assets/stock_images/tourism_map_augmente_2c91bd53.jpg';
 
 export default function ARVRPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
-  const experiences = [
-    {
-      title: 'Imóveis em Realidade Aumentada',
-      description: 'Transforme plantas baixas e folders imobiliários em tours virtuais 3D. Clientes podem visualizar o imóvel completo antes mesmo de visitar.',
-      image: realEstateImage,
-      category: 'Real Estate',
-      features: [
-        'Tour virtual 3D do imóvel ao escanear a planta',
-        'Visualização de diferentes acabamentos',
-        'Informações interativas sobre cada ambiente',
-        'Galeria de fotos 360° integrada'
-      ],
-      demoUrl: '/ar-vr/imoveis'
-    },
-    {
-      title: 'Cartões de Visita Interativos',
-      description: 'Cartões que ganham vida ao serem escaneados, apresentando vídeos, portfólios e links diretos para contato.',
-      image: businessCardImage,
-      category: 'Marketing',
-      features: [
-        'Vídeo de apresentação pessoal ou da empresa',
-        'Links diretos para redes sociais e WhatsApp',
-        'Portfólio de trabalhos em 3D',
-        'Formulário de contato integrado'
-      ],
-      demoUrl: '/ar-vr/cartao-visita'
-    },
-    {
-      title: 'AR para Produtos Impressos: Vídeo & 3D',
-      description: 'Transforme imagens estáticas em experiências multimídia com trailers, vídeos e objetos 3D interativos.',
-      image: catalogImage,
-      category: 'Produtos Impressos',
-      features: [
-        'Rastreamento mundial (World Tracking)',
-        'Vídeos em alta definição sobrepostos',
-        'Modelos 3D interativos com animações',
-        'Cartões de informação com Call-to-Action'
-      ],
-      demoUrl: '/ar-vr/video-3d'
-    },
-    {
-      title: 'Menu de Restaurante em AR',
-      description: 'Cardápios aumentados que trazem pratos à vida com visualização 3D e lazy loading.',
-      image: tourismImage,
-      category: 'Gastronomia',
-      features: [
-        'Visualização 3D realista de pratos',
-        'Sistema de Lazy Loading para menus extensos',
-        'Personalização total de cores e marca',
-        'Compatível com qualquer cardápio impresso'
-      ],
-      demoUrl: '/ar-vr/menu-restaurante'
-    }
-  ];
 
-  // Biblioteca completa de experiências
+  // 6 Experiências principais
   const allExperiences = [
     {
       id: 'real-estate',
-      title: 'Imóveis em Realidade Aumentada',
+      title: 'Real Estate AR Experience',
       category: 'Real Estate',
       level: 'medium',
       image: realEstateImage,
@@ -89,7 +31,7 @@ export default function ARVRPage() {
     },
     {
       id: 'business-card',
-      title: 'Cartões de Visita com AR',
+      title: 'Business Card with Augmented Reality',
       category: 'Marketing',
       level: 'basic',
       image: businessCardImage,
@@ -97,45 +39,51 @@ export default function ARVRPage() {
     },
     {
       id: 'video-3d',
-      title: 'AR para Produtos Impressos: Vídeo & 3D',
+      title: 'AR for Printed Products: Video & 3D',
       category: 'Produtos Impressos',
       level: 'medium',
-      image: catalogImage,
+      image: lotrImage,
       path: '/ar-vr/video-3d'
     },
     {
+      id: 'movie-poster',
+      title: 'Movie Poster in AR',
+      category: 'Cinema & Entretenimento',
+      level: 'basic',
+      image: chaplinImage,
+      path: '/ar-vr/movie-poster'
+    },
+    {
+      id: 'birthday-card',
+      title: 'Augmented Birthday Wishes Card',
+      category: 'Marketing',
+      level: 'basic',
+      image: birthdayImage,
+      path: '/ar-vr/birthday-card'
+    },
+    {
       id: 'restaurant-menu',
-      title: 'Menu de Restaurante em AR',
+      title: 'Restaurant Menu for Web AR',
       category: 'Gastronomia',
       level: 'medium',
-      image: tourismImage,
+      image: menuImage,
       path: '/ar-vr/menu-restaurante'
-    },
-    {
-      id: 'memory-game',
-      title: 'Jogo da Memória para Embalagens',
-      category: 'Packaging',
-      level: 'advanced',
-      image: packagingImage,
-      path: '/ar-vr/jogo-memoria'
-    },
-    {
-      id: 'lotr',
-      title: 'Lord of the Rings: Pôster AR',
-      category: 'Cinema & Entretenimento',
-      level: 'advanced',
-      image: lotrImage,
-      path: '/ar-vr/lotr'
     }
   ];
 
   const levelColors = {
     basic: 'bg-green-500/10 text-green-700 dark:text-green-400 border-green-500/20',
-    medium: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20',
+    medium: 'bg-orange-500/10 text-orange-700 dark:text-orange-400 border-orange-500/20',
     advanced: 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/20'
   };
 
-  const categories = ['all', 'Produtos Impressos', 'Gastronomia', 'Packaging', 'Marketing', 'Real Estate', 'Cinema & Entretenimento'];
+  const levelBars = {
+    basic: 1,
+    medium: 2,
+    advanced: 3
+  };
+
+  const categories = ['all', 'Real Estate', 'Marketing', 'Produtos Impressos', 'Cinema & Entretenimento', 'Gastronomia'];
   const levels = ['all', 'basic', 'medium', 'advanced'];
 
   const filteredExperiences = allExperiences.filter(exp => {
@@ -143,29 +91,6 @@ export default function ARVRPage() {
     const levelMatch = selectedLevel === 'all' || exp.level === selectedLevel;
     return categoryMatch && levelMatch;
   });
-
-  const benefits = [
-    {
-      icon: Smartphone,
-      title: 'Fácil de Usar',
-      description: 'Não precisa de aplicativo. Funciona direto no navegador do celular.'
-    },
-    {
-      icon: Eye,
-      title: 'Engajamento Elevado',
-      description: 'Aumente o tempo de interação com seu material em até 300%.'
-    },
-    {
-      icon: Layers,
-      title: 'Versatilidade',
-      description: 'Funciona em qualquer material impresso: cartões, folders, embalagens.'
-    },
-    {
-      icon: Sparkles,
-      title: 'Inovação',
-      description: 'Diferencie-se da concorrência com tecnologia de ponta.'
-    }
-  ];
 
   const schema = {
     "@context": "https://schema.org",
@@ -211,166 +136,95 @@ export default function ARVRPage() {
         <div className="relative z-10 container mx-auto px-4 md:px-6 max-w-7xl py-20">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Realidade Aumentada e Virtual
+              Experience Library
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              Transforme seus impressos em experiências interativas que surpreendem e engajam
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#experiences">
-                <button className="px-8 py-3 bg-white text-primary font-semibold rounded-md hover-elevate active-elevate-2">
-                  Ver Exemplos
-                </button>
-              </a>
-              <a href="#lead-form">
-                <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-md bg-white/10 backdrop-blur-sm hover-elevate active-elevate-2">
-                  Solicitar Orçamento
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What is AR/VR Section */}
-      <section className="py-20 md:py-24 bg-muted/30" data-testid="ar-info">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              O que é AR/VR em Impressos?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Realidade Aumentada (AR) e Realidade Virtual (VR) aplicadas a materiais impressos 
-              criam uma ponte entre o físico e o digital, permitindo que seus clientes tenham 
-              experiências imersivas ao escanear seus materiais com o celular.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="text-center p-6 rounded-md bg-background border border-primary/20 hover-elevate active-elevate-2"
-                data-testid={`benefit-${index}`}
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-md bg-primary/10 flex items-center justify-center">
-                  <benefit.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experiences Section */}
-      <section id="experiences" className="py-20 md:py-24" data-testid="ar-experiences">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Exemplos de Experiências
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Conheça algumas das possibilidades que a tecnologia AR/VR pode trazer para seus materiais impressos
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {experiences.map((experience, index) => (
-              <ARExperienceCard key={index} {...experience} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Complete Library Section */}
-      <section className="py-20 md:py-24 bg-muted/30" data-testid="library-section">
-        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Biblioteca Completa de Experiências
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Explore exemplos inspiradores de Web AR com passos, benefícios e casos de uso para tornar seus projetos mais rápidos e fáceis
             </p>
+          </div>
+        </div>
+      </section>
 
-            {/* Filters */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <div className="flex-1">
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger data-testid="select-category">
-                    <SelectValue placeholder="Filtrar por categoria" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Todas as categorias</SelectItem>
-                    {categories.slice(1).map(cat => (
-                      <SelectItem key={cat} value={cat}>{cat}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="flex-1">
-                <Select value={selectedLevel} onValueChange={setSelectedLevel}>
-                  <SelectTrigger data-testid="select-level">
-                    <SelectValue placeholder="Filtrar por nível" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Todos os níveis</SelectItem>
-                    <SelectItem value="basic">Básico</SelectItem>
-                    <SelectItem value="medium">Intermediário</SelectItem>
-                    <SelectItem value="advanced">Avançado</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
+      {/* Biblioteca de Experiências */}
+      <section id="experiences" className="py-20 md:py-24" data-testid="ar-experiences">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+          {/* Filtros */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full sm:w-[250px]">
+                <SelectValue placeholder="Todas as categorias" />
+              </SelectTrigger>
+              <SelectContent>
+                {categories.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat === 'all' ? 'Todas as categorias' : cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select value={selectedLevel} onValueChange={setSelectedLevel}>
+              <SelectTrigger className="w-full sm:w-[200px]">
+                <SelectValue placeholder="Todos os níveis" />
+              </SelectTrigger>
+              <SelectContent>
+                {levels.map((level) => (
+                  <SelectItem key={level} value={level}>
+                    {level === 'all' ? 'Todos os níveis' : level}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
-          {/* Library Grid */}
-          {filteredExperiences.length === 0 ? (
-            <div className="text-center py-16">
-              <p className="text-xl text-muted-foreground">
-                Nenhuma experiência encontrada com os filtros selecionados.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredExperiences.map((experience) => (
-                <Link key={experience.id} href={experience.path}>
-                  <Card className="group cursor-pointer overflow-hidden hover-elevate active-elevate-2 h-full" data-testid={`experience-card-${experience.id}`}>
-                    <div className="aspect-video relative overflow-hidden">
+          {/* Grid de Experiências - Estilo Oniryx */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filteredExperiences.map((exp) => (
+              <Link key={exp.id} href={exp.path}>
+                <div className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-lg border-2 border-border hover:border-primary transition-all duration-300 hover-elevate">
+                    {/* Imagem */}
+                    <div className="aspect-video overflow-hidden bg-muted">
                       <img 
-                        src={experience.image} 
-                        alt={experience.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        src={exp.image} 
+                        alt={exp.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute top-3 right-3 flex gap-2">
-                        <Badge variant="outline" className={levelColors[experience.level as keyof typeof levelColors]}>
-                          {experience.level}
+                    </div>
+                    
+                    {/* Conteúdo */}
+                    <div className="p-4 bg-background">
+                      <h3 className="font-semibold text-foreground mb-2 line-clamp-2 min-h-[3rem]">
+                        {exp.title}
+                      </h3>
+                      
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline" className={levelColors[exp.level as keyof typeof levelColors]}>
+                          {exp.level}
                         </Badge>
+                        
+                        {/* Barras de nível */}
+                        <div className="flex gap-1">
+                          {[...Array(3)].map((_, i) => (
+                            <div 
+                              key={i} 
+                              className={`w-1 h-4 rounded-full ${
+                                i < levelBars[exp.level as keyof typeof levelBars] 
+                                  ? exp.level === 'basic' ? 'bg-green-500' 
+                                    : exp.level === 'medium' ? 'bg-orange-500' 
+                                    : 'bg-purple-500'
+                                  : 'bg-muted'
+                              }`}
+                            />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <CardContent className="p-6">
-                      <Badge variant="outline" className="mb-3">
-                        {experience.category}
-                      </Badge>
-                      <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {experience.title}
-                      </h3>
-                      <div className="flex items-center text-primary font-medium">
-                        Ver detalhes
-                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          )}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -378,7 +232,7 @@ export default function ARVRPage() {
       <section id="lead-form" className="py-20 md:py-24 bg-muted/30" data-testid="ar-lead-section">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Pronto para Inovar?
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -393,3 +247,4 @@ export default function ARVRPage() {
     </div>
   );
 }
+

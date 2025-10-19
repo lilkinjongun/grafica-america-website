@@ -1,11 +1,12 @@
 import ExperienceDetailPage from '@/components/ExperienceDetailPage';
 import heroImage from '@assets/generated_images/business_cards_and_brochures_164696ab.png';
 import qrCodeImage from '@assets/stock_images/qr_code_black_and_wh_d280473f.jpg';
+import targetImage from '@assets/business_card_target.webp';
 
 export default function BusinessCardExperience() {
   return (
     <ExperienceDetailPage
-      title="Cartões de Visita com Realidade Aumentada"
+      title="Business Card with Augmented Reality"
       subtitle="Cartões que ganham vida com vídeos, modelos 3D e links interativos"
       category="Marketing & Networking"
       level="basic"
@@ -27,6 +28,7 @@ export default function BusinessCardExperience() {
         'Implementação simples e rápida'
       ]}
       qrCodeImage={qrCodeImage}
+      targetImage={targetImage}
       demoUrl="https://player.onirix.com/projects/df6fea9b217846fab93f0490305e1539/webar"
     />
   );

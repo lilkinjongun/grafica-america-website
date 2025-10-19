@@ -26,7 +26,7 @@ export default function RealEstateExperience() {
         schema={schema}
       />
       <ExperienceDetailPage
-        title="Imóveis em Realidade Aumentada"
+        title="Real Estate AR Experience"
         subtitle="Tours virtuais 3D e visualização de propriedades com AR"
         category="Real Estate"
         level="medium"
@@ -52,6 +52,7 @@ export default function RealEstateExperience() {
           'Transformação de placas de venda em portais digitais'
         ]}
         qrCodeImage={qrCodeImage}
+        targetImage={heroImage}
         demoUrl="#"
       />
     </>
