@@ -47,7 +47,7 @@ export default function LOTRExperience() {
           "World Tracking para experiência imersiva",
           "Compatível com qualquer material impresso"
         ]}
-        markerImage={lotrImage}
+        targetImage={lotrImage}
         videoUrl=""
       />
     </>

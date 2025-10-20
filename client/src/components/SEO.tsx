@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import StructuredData from './StructuredData';
 
 interface SEOProps {
   title: string;
@@ -66,16 +67,8 @@ export default function SEO({
       linkCanonical.setAttribute('href', canonicalUrl);
     }
 
-    if (schema) {
-      let scriptTag = document.querySelector('script[type="application/ld+json"]');
-      if (!scriptTag) {
-        scriptTag = document.createElement('script');
-        scriptTag.setAttribute('type', 'application/ld+json');
-        document.head.appendChild(scriptTag);
-      }
-      scriptTag.textContent = JSON.stringify(schema);
-    }
+    // Schema is now handled by StructuredData component
   }, [title, description, keywords, ogImage, canonicalUrl, schema]);
 
-  return null;
+  return schema ? <StructuredData data={schema} /> : null;
 }
