@@ -142,6 +142,7 @@ export default function ExperienceLibrary() {
                         src={experience.image} 
                         alt={experience.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div className="absolute top-3 right-3 flex gap-2">
                         <Badge variant="outline" className={levelColors[experience.level as keyof typeof levelColors]}>

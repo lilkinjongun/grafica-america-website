@@ -61,6 +61,7 @@ export default function ExperienceDetailPage({
             src={heroImage} 
             alt={title}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
         </div>
@@ -176,7 +177,8 @@ export default function ExperienceDetailPage({
                     <div className="bg-white p-4 rounded-lg mb-6">
                       <img 
                         src={qrCodeImage} 
-                        alt="QR Code" 
+                        alt="QR Code"
+                        loading="lazy" 
                         className="w-full aspect-square object-contain"
                       />
                     </div>
@@ -219,7 +221,8 @@ export default function ExperienceDetailPage({
                     <div className="bg-muted p-4 rounded-lg">
                       <img 
                         src={targetImage} 
-                        alt="Image Target" 
+                        alt="Image Target"
+                        loading="lazy" 
                         className="w-full h-auto object-contain rounded"
                       />
                     </div>

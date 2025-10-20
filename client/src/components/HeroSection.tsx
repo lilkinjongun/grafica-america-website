@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackEvent } from '@/lib/analytics';
 
 interface Slide {
   image: string;
@@ -51,6 +52,7 @@ export default function HeroSection({ slides }: HeroSectionProps) {
             src={slide.image}
             alt={slide.title}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent" />
         </div>
@@ -70,7 +72,10 @@ export default function HeroSection({ slides }: HeroSectionProps) {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
                 data-testid="button-contact"
-                onClick={() => console.log('Contact clicked')}
+                onClick={() => trackEvent('cta_click', { 
+                  button_text: 'Solicitar Orçamento',
+                  location: 'hero_section'
+                })}
               >
                 Solicitar Orçamento
               </Button>
@@ -89,7 +94,10 @@ export default function HeroSection({ slides }: HeroSectionProps) {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 shadow-lg"
                   data-testid="button-portfolio"
-                  onClick={() => console.log('Portfolio clicked')}
+                  onClick={() => trackEvent('cta_click', { 
+                  button_text: 'Ver Portfólio',
+                  location: 'hero_section'
+                })}
                 >
                   Ver Portfólio
                 </Button>

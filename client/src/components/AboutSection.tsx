@@ -39,6 +39,7 @@ export default function AboutSection({ title, description, image, stats }: About
                 alt="Sobre a empresa"
                 className="w-full h-full object-cover"
                 data-testid="about-image"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground px-8 py-4 rounded-md shadow-lg">

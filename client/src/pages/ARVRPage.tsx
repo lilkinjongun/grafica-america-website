@@ -129,6 +129,7 @@ export default function ARVRPage() {
             src={heroImage} 
             alt="AR/VR Technology" 
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
         </div>
@@ -189,6 +190,7 @@ export default function ARVRPage() {
                         src={exp.image} 
                         alt={exp.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </div>
                     
