@@ -101,6 +101,13 @@ export default function Home() {
     }
   ];
 
+  const contactInfo = {
+    address: 'Rua Exemplo, 123 - Centro, Juiz de Fora - MG',
+    phone: '(32) 3215-0000',
+    email: 'contato@graficaamerica.com.br',
+    hours: 'Segunda a Sexta: 8h às 18h'
+  };
+
   return (
     <>
       <SEO 
@@ -129,7 +136,7 @@ export default function Home() {
       </Suspense>
       
       <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><LoadingFallback message="Carregando contato..." /></div>}>
-        <ContactSection />
+        <ContactSection contactInfo={contactInfo} />
       </Suspense>
       
       <Footer />
