@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Link } from 'wouter';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import LeadCaptureForm from '@/components/LeadCaptureForm';
+import LoadingFallback from '@/components/LoadingFallback';
+
+// Lazy load do formulário de captura de leads
+const LeadCaptureForm = lazy(() => import('@/components/LeadCaptureForm'));
 import SEO from '@/components/SEO';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -241,7 +244,9 @@ export default function ARVRPage() {
               Preencha o formulário e nossa equipe entrará em contato para criar uma experiência personalizada
             </p>
           </div>
-          <LeadCaptureForm />
+          <Suspense fallback={<div className="py-8"><LoadingFallback message="Carregando formulário..." /></div>}>
+            <LeadCaptureForm />
+          </Suspense>
         </div>
       </section>
 

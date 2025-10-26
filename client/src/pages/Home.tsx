@@ -1,12 +1,16 @@
+import { lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import PortfolioGallery from '@/components/PortfolioGallery';
-import FacilitiesSection from '@/components/FacilitiesSection';
-import ServicesSection from '@/components/ServicesSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
+import LoadingFallback from '@/components/LoadingFallback';
+
+// Lazy load de componentes pesados (below the fold)
+const PortfolioGallery = lazy(() => import('@/components/PortfolioGallery'));
+const FacilitiesSection = lazy(() => import('@/components/FacilitiesSection'));
+const ServicesSection = lazy(() => import('@/components/ServicesSection'));
+const ContactSection = lazy(() => import('@/components/ContactSection'));
 import { Award, Users, Briefcase, FileText, Package, Image, Clipboard, Palette, Printer } from 'lucide-react';
 
 import heroImage1 from '@assets/generated_images/printing_press_in_action_e75a2bcd.png';
@@ -201,14 +205,28 @@ export default function Home() {
         image={aboutImage}
         stats={stats}
       />
-      <PortfolioGallery items={portfolioItems} />
-      <FacilitiesSection />
-      <ServicesSection
-        title="Nossos Serviços"
-        subtitle="A criatividade, imaginação e sensibilidade do designer gráfico e a experiência e conhecimento do impressor são os requisitos necessários para um impresso de sucesso."
-        services={services}
-      />
-      <ContactSection contactInfo={contactInfo} />
+      
+      {/* Componentes pesados carregados sob demanda */}
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><LoadingFallback message="Carregando portfólio..." /></div>}>
+        <PortfolioGallery items={portfolioItems} />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><LoadingFallback message="Carregando instalações..." /></div>}>
+        <FacilitiesSection />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><LoadingFallback message="Carregando serviços..." /></div>}>
+        <ServicesSection
+          title="Nossos Serviços"
+          subtitle="A criatividade, imaginação e sensibilidade do designer gráfico e a experiência e conhecimento do impressor são os requisitos necessários para um impresso de sucesso."
+          services={services}
+        />
+      </Suspense>
+      
+      <Suspense fallback={<div className="min-h-[400px] flex items-center justify-center"><LoadingFallback message="Carregando contato..." /></div>}>
+        <ContactSection contactInfo={contactInfo} />
+      </Suspense>
+      
       <Footer companyName="Gráfica América" />
     </div>
   );
