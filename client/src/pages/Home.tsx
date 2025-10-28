@@ -5,7 +5,6 @@ import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import LoadingFallback from '@/components/LoadingFallback';
-
 // Lazy load de componentes pesados (below the fold)
 const PortfolioGallery = lazy(() => import('@/components/PortfolioGallery'));
 const FacilitiesSection = lazy(() => import('@/components/FacilitiesSection'));
@@ -24,6 +23,12 @@ import portfolioImg3 from '@assets/image_1760654644636.png';
 import portfolioImg4 from '@assets/image_1760654652532.png';
 import portfolioImg5 from '@assets/image_1760654574841.png';
 import portfolioImg6 from '@assets/image_1760654585304.png';
+
+// Lazy load de componentes pesados (below the fold)
+const PortfolioGallery = lazy(() => import('@/components/PortfolioGallery'));
+const FacilitiesSection = lazy(() => import('@/components/FacilitiesSection'));
+const ServicesSection = lazy(() => import('@/components/ServicesSection'));
+const ContactSection = lazy(() => import('@/components/ContactSection'));
 
 export default function Home() {
   const heroSlides = [
@@ -54,156 +59,72 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: Award, label: 'Anos de Experiência', value: '28+' },
-    { icon: Users, label: 'Clientes Atendidos', value: '500+' },
-    { icon: Briefcase, label: 'Projetos Realizados', value: '2000+' }
+    { icon: Award, value: '29+', label: 'Anos de Experiência' },
+    { icon: Users, value: '5000+', label: 'Clientes Satisfeitos' },
+    { icon: Briefcase, value: '15000+', label: 'Projetos Concluídos' }
   ];
 
   const portfolioItems = [
-    { id: 1, image: portfolioImg1, title: 'Impressora Offset RYOBI', category: 'Equipamentos' },
-    { id: 2, image: portfolioImg2, title: 'Impressão Offset Profissional', category: 'Equipamentos' },
-    { id: 3, image: portfolioImg3, title: 'Corte a Laser de Precisão', category: 'Acabamento' },
-    { id: 4, image: portfolioImg4, title: 'Dobradeira Industrial', category: 'Acabamento' },
-    { id: 5, image: portfolioImg5, title: 'Recepção e Atendimento', category: 'Estrutura' },
-    { id: 6, image: portfolioImg6, title: 'Escritório de Design', category: 'Estrutura' },
+    { id: 1, title: 'Impressão Offset', category: 'Impressão', image: portfolioImg1 },
+    { id: 2, title: 'Material Promocional', category: 'Marketing', image: portfolioImg2 },
+    { id: 3, title: 'Embalagens Personalizadas', category: 'Embalagem', image: portfolioImg3 },
+    { id: 4, title: 'Banners e Faixas', category: 'Sinalização', image: portfolioImg4 },
+    { id: 5, title: 'Cartões de Visita', category: 'Corporativo', image: portfolioImg5 },
+    { id: 6, title: 'Catálogos e Revistas', category: 'Editorial', image: portfolioImg6 }
   ];
 
   const services = [
     {
       icon: FileText,
       title: 'Impressão Offset',
-      description: 'Alta qualidade para grandes tiragens de materiais gráficos, garantindo cores precisas e acabamento profissional.'
+      description: 'Alta qualidade para grandes tiragens de materiais impressos'
     },
     {
       icon: Package,
       title: 'Embalagens',
-      description: 'Desenvolvimento e impressão de embalagens personalizadas que valorizam seu produto.'
+      description: 'Soluções criativas e funcionais para seus produtos'
     },
     {
       icon: Image,
       title: 'Impressão Digital',
-      description: 'Soluções rápidas para pequenas e médias tiragens com excelente qualidade.'
+      description: 'Rapidez e qualidade para pequenas e médias tiragens'
     },
     {
       icon: Clipboard,
-      title: 'Material Corporativo',
-      description: 'Cartões de visita, papelaria, pastas e todo material necessário para sua empresa.'
+      title: 'Material Promocional',
+      description: 'Folders, flyers, catálogos e muito mais'
     },
     {
       icon: Palette,
       title: 'Design Gráfico',
-      description: 'Equipe criativa especializada em desenvolver layouts profissionais e impactantes.'
+      description: 'Criação e desenvolvimento de identidade visual'
     },
     {
       icon: Printer,
-      title: 'Grande Formato',
-      description: 'Banners, faixas, adesivos e sinalização para divulgar sua marca.'
+      title: 'Acabamento',
+      description: 'Laminação, verniz, hot stamping e outros acabamentos especiais'
     }
   ];
 
   const contactInfo = {
-    address: 'Rua Christovam Molinari, 50, Morro da Glória - CEP: 36035-125, Juiz de Fora - MG',
-    phone: '(32) 3257-8000',
+    address: 'Rua Exemplo, 123 - Centro, Juiz de Fora - MG',
+    phone: '(32) 3215-0000',
     email: 'contato@graficaamerica.com.br',
     hours: 'Segunda a Sexta: 8h às 18h'
   };
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://graficaamerica.com.br/#business",
-        "name": "Gráfica América",
-        "description": "Gráfica especializada em Realidade Aumentada para Imóveis e Construtoras em Juiz de Fora, Rio de Janeiro e São Paulo. Tours virtuais 3D, plantas baixas AR e marketing imobiliário inovador.",
-        "url": "https://graficaamerica.com.br",
-        "telephone": "+55-32-3257-8000",
-        "email": "contato@graficaamerica.com.br",
-        "foundingDate": "1995",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rua Christovam Molinari, 50, Morro da Glória",
-          "addressLocality": "Juiz de Fora",
-          "addressRegion": "MG",
-          "postalCode": "36035-125",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "-21.7654",
-          "longitude": "-43.3496"
-        },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Juiz de Fora"
-          },
-          {
-            "@type": "City",
-            "name": "Rio de Janeiro"
-          },
-          {
-            "@type": "City",
-            "name": "São Paulo"
-          }
-        ],
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://graficaamerica.com.br/#ar-imoveis",
-        "name": "Realidade Aumentada para Imóveis",
-        "description": "Tours virtuais 3D em AR para imobiliárias e construtoras. Transforme plantas baixas e folders imobiliários em experiências interativas.",
-        "provider": {
-          "@id": "https://graficaamerica.com.br/#business"
-        },
-        "areaServed": [
-          "Juiz de Fora",
-          "Rio de Janeiro",
-          "São Paulo"
-        ],
-        "serviceType": "Realidade Aumentada, Tour Virtual 3D, Marketing Imobiliário"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://graficaamerica.com.br"
-          }
-        ]
-      }
-    ]
-  };
-
   return (
-    <div className="min-h-screen">
-      <SEO
-        title="Gráfica América | AR para Imóveis e Construtoras - Juiz de Fora, RJ e SP"
-        description="Transforme plantas baixas e folders imobiliários em tours virtuais 3D com Realidade Aumentada. Atendemos imobiliárias e construtoras em Juiz de Fora, Rio de Janeiro e São Paulo. Solicite orçamento!"
-        keywords="realidade aumentada imóveis, tour virtual 3D, AR imobiliária, plantas baixas AR, marketing imobiliário, construtora tecnologia, imobiliária Juiz de Fora, tour virtual Rio de Janeiro, AR São Paulo"
-        schema={schema}
+    <>
+      <SEO 
+        title="Gráfica América - Qualidade e Tradição desde 1995"
+        description="Atuando no mercado gráfico desde 1995, a Gráfica América oferece serviços de impressão de alta qualidade em Juiz de Fora, MG. Criatividade, tecnologia e excelência."
+        keywords="gráfica, impressão, offset, digital, embalagens, Juiz de Fora, MG"
       />
-      <Navbar companyName="Gráfica América" />
+      <Navbar />
       <HeroSection slides={heroSlides} />
-      <AboutSection
-        title="A Gráfica América"
-        description="Atuando no mercado gráfico desde 1995, a América aposta na criatividade e na ousadia de seus profissionais, além da utilização de modernas tecnologias para propiciar aos seus clientes um excelente padrão de qualidade. Com permanente investimento em especialização, aperfeiçoamento da mão de obra e recursos tecnológicos."
-        image={aboutImage}
+      <AboutSection 
         stats={stats}
+        image={aboutImage}
       />
       
       {/* Componentes pesados carregados sob demanda */}
@@ -228,6 +149,7 @@ export default function Home() {
       </Suspense>
       
       <Footer companyName="Gráfica América" />
-    </div>
+    </>
   );
 }
+

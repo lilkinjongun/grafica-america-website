@@ -40,6 +40,7 @@ export default defineConfig({
             return 'vendor-ui';
           }
         },
+        },
       },
     },
     chunkSizeWarningLimit: 1000,
