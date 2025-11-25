@@ -24,12 +24,6 @@ import portfolioImg4 from '@assets/image_1760654652532.png';
 import portfolioImg5 from '@assets/image_1760654574841.png';
 import portfolioImg6 from '@assets/image_1760654585304.png';
 
-// Lazy load de componentes pesados (below the fold)
-const PortfolioGallery = lazy(() => import('@/components/PortfolioGallery'));
-const FacilitiesSection = lazy(() => import('@/components/FacilitiesSection'));
-const ServicesSection = lazy(() => import('@/components/ServicesSection'));
-const ContactSection = lazy(() => import('@/components/ContactSection'));
-
 export default function Home() {
   const heroSlides = [
     {
@@ -120,9 +114,11 @@ export default function Home() {
         description="Atuando no mercado gráfico desde 1995, a Gráfica América oferece serviços de impressão de alta qualidade em Juiz de Fora, MG. Criatividade, tecnologia e excelência."
         keywords="gráfica, impressão, offset, digital, embalagens, Juiz de Fora, MG"
       />
-      <Navbar />
+      <Navbar companyName="Gráfica América" />
       <HeroSection slides={heroSlides} />
-      <AboutSection 
+      <AboutSection
+        title="A Gráfica América"
+        description="Atuando no mercado gráfico desde 1995, a América aposta na criatividade e na ousadia de seus profissionais, além da utilização de modernas tecnologias para propiciar aos seus clientes um excelente padrão de qualidade. Com permanente investimento em especialização, aperfeiçoamento da mão de obra e recursos tecnológicos."
         stats={stats}
         image={aboutImage}
       />

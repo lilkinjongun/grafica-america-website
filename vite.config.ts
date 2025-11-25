@@ -39,16 +39,15 @@ export default defineConfig({
             }
             return 'vendor-ui';
           }
-        },
-        },
-      },
+        }
+      }
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 1000
   },
   server: {
     fs: {
       strict: true,
-      deny: ["**/.*"],
-    },
-  },
+      deny: ["**/.*"]
+    }
+  }
 });
